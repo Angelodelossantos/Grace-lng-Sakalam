@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>A Truth You Deserve</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+<div id="hearts"></div>
+
+<div class="stage">
+
+  <!-- 1: Landing -->
+  <section class="panel active" id="p-start">
+    <h1 class="title">A Truth You Deserve</h1>
+    <p class="sub"> I hope you like the website I made for you.</p>
+    <div class="bouquet">💐</div>
+    <button onclick="go('p-envelope')">Begin</button>
+  </section>
+
+  <!-- 2: Envelope -->
+  <section class="panel" id="p-envelope">
+    <p class="sub">One thing before you read it —</p>
+    <div class="envelope" id="envelope" onclick="openEnvelope()">
+      <div class="body"></div>
+      <div class="flap"></div>
+      <div class="heart-seal">🩷</div>
+    </div>
+    <p class="sub">Tap the envelope to open it.</p>
+  </section>
+
+  <!-- 3: No pressure -->
+  <section class="panel" id="p-reassure">
+    <p class="body-text" style="text-align:center;">I want to be honest with you. I’ve liked you for a long time, and the more I get to know you, the more I fall for you. I’m not rushing whatever might happen between us; I just want to show you that I’m sincere and ready to get to know you better. I hope you give me the chance to court you and show you just how serious I am about you, Grace..</p>
+    <button onclick="go('p-heads-up')">Continue</button>
+  </section>
+
+  <!-- 4: heads up -->
+  <section class="panel" id="p-heads-up">
+    <p class="body-text" style="text-align:center;">All I want is for you to know how I truly feel.</p>
+    <button onclick="go('p-letter')">Continue</button>
+  </section>
+
+  <!-- 5: Letter -->
+  <section class="panel" id="p-letter">
+    <div class="vinyl" title="imagine this playing"></div>
+    <p class="sub" style="margin-top:-.5rem;">(pretend something soft is playing)</p>
+    <audio id="myAudio">
+    <source src="./music/Willie Revillame - Syempre (Official Lyric Video).mp3" type="audio/mpeg">
+ </audio>
+
+ <button id="playBtn" onclick="toggleAudio()">Play</button>
+</button>
+    <div class="letter-scroll">
+      <p class="body-text">Dear <input class="name-input" id="toName" value="you" size="6">,</p>
+      <p class="body-text">I spent a long time thinking about how to say this—or whether I should even say it at all. But keeping it bottled up feels heavier than simply being honest.</p>
+      <p class="body-text">Amidst our ordinary conversations, you quietly and gradually became one of my favorite parts of every day. I hadn't planned for it, but in an unexpected way - and without me even realizing it—you became someone I truly look forward to talking to. Those simple chats slowly evolved into something I now deeply cherish - far more than I ever expected..</p>
+      <p class="body-text">I’m not asking for anything right now. I just want you to know the truth: if there ever comes a time when you feel even a little bit of what I feel, I want to know about it.</p>
+      <p class="body-text">Whatever you are feeling, thank you for being someone I am truly glad to have met.</p>
+      <p class="body-text">With all my heart,<br><input class="name-input" id="fromName" value="me" size="6"></p>
+    </div>
+    <button onclick="go('p-final')">Continue</button>
+  </section>
+
+  <!-- 6: Final -->
+  <section class="panel" id="p-final">
+    <h1 class="title" style="font-size:2rem;">That's it.</h1>
+    <p class="sub">That's the whole truth. No follow-up needed unless you want one.</p>
+    <div class="step-row">
+      <button onclick="respond('same')">🩷 I feel it too</button>
+      <button class="btn-ghost" onclick="respond('time')">Need a little time</button>
+    </div>
+    <p class="sub" id="response-msg" style="min-height:1.4em;"></p>
+  </section>
+ <script src="is.js"></script>
+</div>
+</body>
+</html>
